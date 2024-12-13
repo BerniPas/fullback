@@ -12,6 +12,7 @@ dotenv.config();
 
 // importamos las rutas de la aplicación
 const routerUser = require('./router/userRouter');
+const routerProduct = require('./router/productRouter');
 
 // 2. Creamos una instancia de express
 const app = express();
@@ -35,6 +36,7 @@ app.use(cors());
 
 // Rutas de la aplicación como middleware
 app.use('/user', routerUser);
+app.use('/product', routerProduct);
 
 //conexion();   
 conexion(MONGO_ATLAS);
