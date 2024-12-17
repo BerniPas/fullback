@@ -34,6 +34,23 @@ router.post("/register", async (req, res) => {
 
 });
 
+// ruta para obtener los productos
+router.get("/productos", async (req, res) => {
+
+    try {
+
+        const products = await Product.find();
+
+        return res.status(200).json(products);
+
+    } catch (error) {
+
+        console.log('Error al obtener los productos:', error);
+        return res.status(400).json({ message: 'Error al obtener los productos' });
+    }
+
+});
+
 
 
 
